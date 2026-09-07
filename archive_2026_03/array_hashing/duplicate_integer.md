@@ -85,3 +85,22 @@ def duplicateInteger(self, nums: list[int]) -> Boolean:
 ```
 
 # Review Evaluate
+Let's test this code with a simple case.
+Suppose nums is [1, 2, 3, 3].
+First, the hash set is empty.
+We add 1, then 2, then 3 to the hash set.
+When we reach the second 3, 3 is already in the hash set.
+So we return True.
+This works as expected.
+
+Now, let's test a case with no duplicates.
+Suppose nums is [1, 2, 3, 4].
+We go through all the elements and add each one to the hash set.
+We don't find any duplicates.
+So the loop finishes, and we return False.
+This also works as expected.
+
+Let's also check an empty array.
+If nums is empty, the loop doesn't run.
+So we directly return False.
+That's the expected result.
