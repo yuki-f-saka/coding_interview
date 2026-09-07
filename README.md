@@ -1,21 +1,21 @@
 # coding_interview
 
-コーディング面接対策でデータ構造やアルゴリズムを LeetCode / NeetCode を通して学習するリポジトリ。
+A repository for studying data structures and algorithms through LeetCode / NeetCode as coding interview preparation.
 
-## ディレクトリ構成
+## Directory Structure
 
-| ディレクトリ | 時期 | 内容 |
+| Directory | Period | Contents |
 |---|---|---|
-| `archive_2025_06/` | 2025-06 〜 2025-12 | 1回目。テーマ別にアルゴリズムを実装（Python） |
-| `archive_2026_03/` | 2026-01 〜 2026-03 | 2回目。NeetCode 150 を UMPIRE で言語化＋YouTube投稿 |
+| `archive_2025_06/` | 2025-06 – 2025-12 | 1st round. Algorithms implemented by topic (Python) |
+| `archive_2026_03/` | 2026-01 – 2026-03 | 2nd round. NeetCode 150 explained with UMPIRE + posted on YouTube |
 
-## 運用ルール
+## Conventions
 
-- 過去の取り組みは `archive_YYYY_MM/`（開始年月）にまとめて凍結する。**編集しない**
-- 新しく再開するときは、新規ディレクトリを作ってそこに入れていく
-- 解法は UMPIRE（Understand / Match / Plan / Implement / Review / Evaluate）で言語化する
+- Past work is frozen under `archive_YYYY_MM/` (year and month it started). **Do not edit it**
+- When starting again, create a new directory and put the new work there
+- Explain solutions using UMPIRE (Understand / Match / Plan / Implement / Review / Evaluate)
 
-## リンク
+## Links
 
-- NeetCode ロードマップ: https://neetcode.io/roadmap
+- NeetCode roadmap: https://neetcode.io/roadmap
 - YouTube: https://www.youtube.com/@funacode
