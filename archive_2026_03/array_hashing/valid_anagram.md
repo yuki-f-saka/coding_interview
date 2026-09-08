@@ -39,10 +39,8 @@ ex5. s = "frog", t = "grotf" return False
 ## sorting
 First idea is sorting.
 If we sort both strings, we can verify that both strings are identical or not.
-Time complexity is O(nlogn) because sort takes nlogn.
-Space complexity is O(1) because we don't use memory at all.
 
-psudocode is here
+### psudocode
 ```
 if length s is not equal length t:
     return False
@@ -55,14 +53,14 @@ if sorted_s == sorted_t:
 
 return False
 ```
+Time complexity is O(nlogn) because sort takes nlogn.
+Space complexity is O(n) because we make a new list when we sort a string for example `sorted_s = sort(s)`
 
 ## hash table
 Second idea is hash table.
 If we use hash table, we can keep track of the count of characters of both strings.
-Time complexity: O(n)
-Space complexity: O(1)
 
-psudocode is here
+### psudocode
 ```
 if length s is not equal length t:
     return False
@@ -82,9 +80,10 @@ for char in s
         return False
 return True
 ```
+Time complexity: O(n) because we iterate through the strings a few times.
+Space complexity: O(1) because the counter map can have at most 26 entries, since the input contains only lowercase English letters.
 
-In python we can use defaultdict or Counter, so we can write code more simply but complexity is same.
-
+In python we can use defaultdict or Counter to write code more simply, but complexity is same.
 ## collections.defaultdict
 Using defaultdict, psudocode is here
 ```
@@ -124,7 +123,7 @@ return True
 ##  Compare hash table(Pythonic)
 Also we can verify both counters.
 In Python, we can compare hash tables, while cannot compare with golang.
-So we have to iterate and veriry each element.
+So we have to iterate and verify each element.
 ```
 if length s is not equal length t:
     return False
@@ -138,12 +137,42 @@ if counter_s == counter_t:
 return False
 ```
 
-
 # Implement
+The sorting approach takes O(nlogn) time and O(n) space.
+The hash table approach takes O(n) time and O(1) space.
+That's why we prefer the second approach.
+
 ```python
+def isAnagram(self, s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
 
+    count = {}
+    for char in s:
+        count[char] = count.get(char, 0) + 1
 
+    for char in t:
+        count[char] = count.get(char, 0) - 1
 
+    for char in s:
+        if count[char] != 0:
+            return False
+
+    return True
 ```
 
 # Review Evaluate
+Let me check.
+
+True
+ex1. s = "ai", t = "ia" return True
+ex2. s = "frog", t = "grof" return True
+ex3. s = "", t = "" return True
+
+False
+ex4. s = "frog", t = "grot" return False
+
+## edge case
+ex5. s = "frog", t = "grotf" return False
+
+All cases correct!
