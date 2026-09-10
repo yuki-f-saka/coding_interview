@@ -47,7 +47,7 @@ we wanna sort only once.
 ## Another approach(Using Hashmap)
 For each string, we build a count array of length 26 — one slot per letter of the alphabet. We increment the slot for each character we see. Then we convert that array to a tuple and use it as the hashmap key. All anagrams will produce exactly the same tuple, so they'll belong to the same bucket.
 
-> "This runs in O(m * n) time, which is optimal — we touch each character exactly once."
+> "This runs in O(m * n) time, — we touch each character exactly once."
 
 ### Excalidraw: What to draw
 
@@ -111,9 +111,14 @@ ans[key].append(s)
 - "`[0] * 26` gives us a fresh 26-slot array for every string. We reset it per iteration, so strings don't interfere with each other."
 
 - "`ord(c) - ord('a')` maps 'a' to index 0, 'b' to 1, ..., 'z' to 25 — it's a compact way to index by character."
+This converts each character into an index from 0 to 25.
 
 - "`tuple(count)` converts the list to a tuple because lists are not hashable and can not be used as dictionary keys
 
 - "`list(ans.values())` collects all the grouped lists into the final output."
 
 # Review Evaluate
+We go through every string and every character once.
+So the time complexity is O(m * n).
+Anagrams have the same character counts.
+So we use the character counts as a hashmap key.
